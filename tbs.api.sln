@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37314.3 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tbs.api", "tbs.api\tbs.api.csproj", "{E880E929-5A6B-4140-93EE-98F90DEFBADF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E880E929-5A6B-4140-93EE-98F90DEFBADF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E880E929-5A6B-4140-93EE-98F90DEFBADF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E880E929-5A6B-4140-93EE-98F90DEFBADF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E880E929-5A6B-4140-93EE-98F90DEFBADF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {87D5C643-716D-43C5-B021-CA6B04C6EF56}
+	EndGlobalSection
+EndGlobal
