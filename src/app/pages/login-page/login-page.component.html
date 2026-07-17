@@ -1,0 +1,32 @@
+<section class="login-page">
+    <div class="login-overlay"></div>
+
+    <form class="login-panel" [formGroup]="loginForm" (ngSubmit)="submit()">
+        <div class="logo-wrap">
+            <img src="/assets/Images/logo4.png" alt="Tukahiirwa Bernard Services logo"/>
+        </div>
+        <h1>Admin Login</h1>
+
+        <label>Username
+            <input type="text" formControlName="username" autocomplete="username"/>
+        </label>
+        <small *ngIf="loginForm.controls.username.touched && loginForm.controls.username.invalid">
+            Username is required.
+        </small>
+
+        <label> Password
+            <input type="text" formControlName="password" autocomplete="current-password"/>
+        </label>
+        <small *ngIf="loginForm.controls.password.touched && loginForm.controls.password.invalid">
+            Password is required.
+        </small>
+
+        <p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
+
+        <button type="submit" [disabled]="loading">{{loading ? 'Signing In...' : 'Sign In'}}
+        </button>
+
+
+    </form>
+
+</section>

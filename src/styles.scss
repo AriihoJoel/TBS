@@ -1,1 +1,70 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+    --color-primary: #2f7d32;
+    --color-primary-dark: #1f5a24;
+    --color-primary-light: #e7f4e8;
+
+
+    --color-accent: #f2b705;
+    --color-danger: #b3261e;
+
+    --color-text: #18251d;
+    --color-muted: #66756b;
+    --color-border: #d7e2d9;
+    --color-surface: #ffffff;
+    --color-page: #f6faf6;
+
+    --shadow-soft: 0 18px 45px rgba(24,37,29,0.12);
+    --radius-md: 8px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-text);
+    background: var(--color-page);
+}
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+.btn-primary{
+    border: 0;
+    border-radius: var(--radius-md);
+    padding: 14px 18px;
+    background: var(--color-primary);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-primary:hover{
+background: var(--color-primary-dark);
+}
+
+.btn-primary:disabled{
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.form-input:focus{
+    outline: 3px solid rgba(47,125,50,0.18);
+    border-color: var(--color-primary);
+}
+
+.error-text{
+    color: var(--color-danger);
+}
+
+.page-shell{
+    min-height: 100vh;
+    background: var(--color-page);
+}
