@@ -1,1 +1,82 @@
-<p>admin-inquiries works!</p>
+<section class="admin-page">
+
+  <!-- Top utility bar -->
+  <div class="topbar">
+    <img class="logo" src="/assets/Images/TBS_logo.png" alt="TBS-Logo">
+
+    <div class="search-section">
+      <div class="search-container">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          placeholder="Search by name, company, service or message..."
+          (input)="onSearch($event)"
+          class="search-input">
+        <button *ngIf="searchTerm" (click)="clearSearch()" class="clearBtn">✕</button>
+      </div>
+    </div>
+
+    <button type="button" (click)="logout()" class="btn-logout">Log out</button>
+  </div>
+
+  <!-- Page title -->
+  <header class="admin-header">
+    <p class="eyebrow">Tukahiirwa Bernard Services</p>
+    <h1>Client Inquiries</h1>
+  </header>
+
+  <!-- Search stats -->
+  <p class="search-stats" *ngIf="searchTerm && filteredInquiries.length">
+    Found {{ filteredInquiries.length }} result{{ filteredInquiries.length > 1 ? 's' : '' }}
+  </p>
+
+  <!-- Loading -->
+  <p class="status-msg" *ngIf="loading">Loading inquiries…</p>
+
+  <!-- Errors -->
+  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+
+  <!-- Inquiries Display-->
+  <div class="inquiry-list" *ngIf="!loading && filteredInquiries.length">
+    <article class="inquiry-card" *ngFor="let inquiry of filteredInquiries">
+
+      <div class="card-top">
+        <div class="who-row">
+          <span class="stamp">{{ inquiry.fullName.charAt(0) }}</span>
+          <div class="who">
+            <h2>{{ inquiry.fullName }}</h2>
+            <p class="company">{{ inquiry.companyName || 'Not provided' }}</p>
+          </div>
+        </div>
+
+        <span class="badge"
+          [ngClass]="{
+            'badge-new': inquiry.status === 'New',
+            'badge-progress': inquiry.status === 'In Progress',
+            'badge-done': inquiry.status === 'Responded'
+          }">
+          {{ inquiry.status }}
+        </span>
+      </div>
+
+      <div class="meta-row">
+        <span class="meta-item"><span class="meta-icon">📞</span>{{ inquiry.phoneNumber }}</span>
+        <span class="meta-item"><span class="meta-icon">✉️</span>{{ inquiry.emailAddress|| 'Not provided' }}</span>
+      </div>
+
+      <span class="service-tag">{{ inquiry.requestedService }}</span>
+
+      <p class="message">“{{ inquiry.message }}”</p>
+
+      <div class="card-footer">
+        <small>{{ inquiry.createdAt | date: 'medium' }}</small>
+      
+      </div>
+
+    </article>
+  </div>
+
+  <p *ngIf="!loading && !filteredInquiries.length" class="status-msg">No inquiries yet.</p>
+  <p *ngIf="!loading && !filteredInquiries.length && searchTerm" class="no-result">No results found for "{{searchTerm}}"</p>
+
+</section>

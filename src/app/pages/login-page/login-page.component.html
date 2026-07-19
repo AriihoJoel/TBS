@@ -15,7 +15,7 @@
         </small>
 
         <label> Password
-            <input type="text" formControlName="password" autocomplete="current-password"/>
+            <input type="password" formControlName="password" autocomplete="current-password"/>
         </label>
         <small *ngIf="loginForm.controls.password.touched && loginForm.controls.password.invalid">
             Password is required.

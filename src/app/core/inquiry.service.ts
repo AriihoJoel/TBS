@@ -25,6 +25,6 @@ export class InquiryService {
   constructor(private http : HttpClient) { }
 
   getInquiries(){
-    return this.http.get<AdminResponse[]>(`${this.apiBaseUrl}/admin/inquiries/`);
+    return this.http.get<AdminResponse[]>(`${this.apiBaseUrl}/admin/inquiries`);
   }
 }
