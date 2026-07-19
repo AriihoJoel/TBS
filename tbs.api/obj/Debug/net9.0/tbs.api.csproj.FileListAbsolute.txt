@@ -151,3 +151,4 @@ D:\TBS_WebApp\tbs.api\tbs.api\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols
 D:\TBS_WebApp\tbs.api\tbs.api\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
 D:\TBS_WebApp\tbs.api\tbs.api\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
 D:\TBS_WebApp\tbs.api\tbs.api\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+D:\TBS_WebApp\tbs.api\tbs.api\obj\Debug\net9.0\tbs.api.sourcelink.json

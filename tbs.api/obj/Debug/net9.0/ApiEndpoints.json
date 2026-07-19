@@ -20,6 +20,22 @@
     ]
   },
   {
+    "ContainingType": "tbs.api.Controllers.InquiryController",
+    "Method": "CreateInquiry",
+    "RelativePath": "api/admin/inquiries",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "inquiry",
+        "Type": "tbs.api.DTO.CreateInquiryDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "tbs.api.Controllers.AdminInquiriesController",
     "Method": "GetInquiryById",
     "RelativePath": "api/admin/inquiries/{id}",
@@ -72,22 +88,6 @@
     ]
   },
   {
-    "ContainingType": "tbs.api.Controllers.InquiryController",
-    "Method": "CreateInquiry",
-    "RelativePath": "api/Inquiry",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "inquiry",
-        "Type": "tbs.api.DTO.CreateInquiryDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "tbs.api.Controllers.ServiceController",
     "Method": "GetServices",
     "RelativePath": "api/Service",
@@ -106,26 +106,5 @@
         "StatusCode": 200
       }
     ]
-  },
-  {
-    "ContainingType": "tbs.api.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[tbs.api.WeatherForecast, tbs.api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ],
-    "EndpointName": "GetWeatherForecast"
   }
 ]

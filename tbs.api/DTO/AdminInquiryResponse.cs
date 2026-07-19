@@ -10,6 +10,6 @@
         public string RequestedService { get; set; } = string.Empty;
         public string Message { get; set; } = string.Empty;
         public string Status { get; set; } = "";
-        public DateTime CreatedAt;
+        public DateTime CreatedAt { get; set; }
     }
 }
