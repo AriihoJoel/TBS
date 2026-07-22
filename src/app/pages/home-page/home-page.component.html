@@ -1,0 +1,68 @@
+<section class="home-page">
+    <nav class="navbar">
+        <img src="/assets/Images/TBS_logo.png" class="logo" alt="TBS_logo">
+
+        <div class="nav-links">
+            <a routerLink="/">Home</a>
+            <a routerLink="/request-quote">Request Quotation</a>
+            <a routerLink="/admin/inquiries">Admin</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <img class="hero-image" [src]="getCurrentSlide().image" alt="Fresh food supply">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h1>{{getCurrentSlide().title}}</h1>
+            <p>{{ getCurrentSlide().text}}</p>
+        </div>
+
+        <div class="hero-actions">
+            <a routerLink="/request-quote" class="btn-primary">Request a Quote</a>
+            <a href="tel:+256757211671" class="btn-secondary">Call Now</a>
+        </div>
+
+        <div class="hero-controls">
+            <button type="button" (click)="previousHeroSlide()">Prev</button>
+            <button type="button" (click)="nextHeroSlide()">Next</button>
+        </div>
+
+        <div class="hero-dots">
+            <button type="button" *ngFor="let slide of heroSlides; let i = index" [class.active]="i === currentSlideIndex" (click)="setHeroSlide(i)"></button>
+
+        </div>
+    </section>
+
+    <section class="trust-section">
+        <p>Trusted by organizations including</p>
+        <div class="client-list">
+            <span>Watoto Childcare Ministries</span>
+            <span>Kampala Hospital</span>
+            <span>CoRSU Hospital</span>
+            <span>Kings College Budo</span>
+            <span>St. Marys Kisubi</span>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <div class="section-header">
+            <p class="eyebrow">What we do</p>
+            <h2>Our Services</h2>
+        </div>
+
+        <p *ngIf="loading">Loading Services...</p>
+        <p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
+
+        <div class="service-grid" *ngIf="!loading && services.length">
+            <article class="service-card" *ngFor="let service of services">
+                <div class="service-icon">{{service.iconName}}</div>
+                <h3>{{service.name}}</h3>
+                <p>{{service.description}}</p>
+            </article>
+
+        </div>
+
+    </section>
+
+</section>

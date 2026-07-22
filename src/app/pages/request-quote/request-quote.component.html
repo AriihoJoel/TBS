@@ -1,0 +1,54 @@
+<section class="quote-page">
+      <!-- Top utility bar -->
+    <div class="topbar">
+        <img class="logo" src="/assets/Images/TBS_logo.png" alt="TBS-Logo">
+    </div>
+
+    <div class="quote-intro">
+        <p class="eyebrow">Request a quotation</p>
+        <h1>Fresh food and grocery supply for your organisation</h1>
+        <p>Tell us what you need, how often you need it, and where it should be delivered.</p>
+    </div>
+
+    <form class="quote-form" [formGroup]="quoteForm" (ngSubmit)="submit()">
+        <div class="form-row">
+            <label>Full Name
+                <input type="text" formControlName="fullName" placeholder="e.g. John Doe"/>
+            </label>
+
+             <label>Company Name
+                <input type="text" formControlName="companyName" placeholder="e.g. Mega Industries"/>
+            </label>
+        </div>
+
+        <div class="form-row">
+             <label>Phone Number
+                <input type="text" formControlName="phoneNumber" placeholder="e.g. 0700123456"/>
+            </label>
+
+            <label>Email Address
+                <input type="email" formControlName="emailAddress" placeholder="you@company.com"/>
+            </label>
+        </div>
+
+      
+        <label>Requested Service
+            <select formControlName="requestedService">
+                <option value="">Select a preferred service</option>
+                <option *ngFor="let service of services" [value]="service">{{service}}</option>
+            </select>
+        </label>
+
+        <label>Message
+            <textarea rows="5" formControlName="message" placeholder="Tell us about quantities, delivery frequency, and location..."></textarea>
+        </label>
+
+        <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+        <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+        <button type="submit" [disabled]="loading"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg>
+            {{loading ? 'Sending request' : 'Submit request'}}</button>
+
+    </form>
+
+</section>

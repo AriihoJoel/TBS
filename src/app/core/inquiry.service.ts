@@ -13,6 +13,15 @@ export interface AdminResponse{
   createdAt: string;
 }
 
+export interface CreateInquiry{
+  fullName: string;
+  companyName: string;
+  phoneNumber: string;
+  emailAddress: string;
+  requestedService: string;
+  message: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -26,5 +35,9 @@ export class InquiryService {
 
   getInquiries(){
     return this.http.get<AdminResponse[]>(`${this.apiBaseUrl}/admin/inquiries`);
+  }
+
+  createInquiry(request: CreateInquiry){
+    return this.http.post(`${this.apiBaseUrl}/inquiries`, request);
   }
 }

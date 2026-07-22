@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { AuthInterceptor } from './core/auth.interceptor';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { AdminInquiriesComponent } from './pages/admin-inquiries/admin-inquiries.component';
+import { RequestQuoteComponent } from './pages/request-quote/request-quote.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { AdminInquiriesComponent } from './pages/admin-inquiries/admin-inquiries
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RequestQuoteComponent,
+    HomePageComponent
   ],
   providers: [
     provideHttpClient(withInterceptorsFromDi()),
