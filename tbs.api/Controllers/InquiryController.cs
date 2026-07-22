@@ -6,7 +6,7 @@ using tbs.api.Models;
 namespace tbs.api.Controllers
 {
     [ApiController]
-    [Route("api/admin/inquiries")]
+    [Route("api/inquiries")]
     public class InquiryController : Controller
     {
         private readonly AppDbContext _context;

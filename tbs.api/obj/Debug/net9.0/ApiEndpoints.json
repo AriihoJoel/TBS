@@ -20,22 +20,6 @@
     ]
   },
   {
-    "ContainingType": "tbs.api.Controllers.InquiryController",
-    "Method": "CreateInquiry",
-    "RelativePath": "api/admin/inquiries",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "inquiry",
-        "Type": "tbs.api.DTO.CreateInquiryDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "tbs.api.Controllers.AdminInquiriesController",
     "Method": "GetInquiryById",
     "RelativePath": "api/admin/inquiries/{id}",
@@ -88,9 +72,25 @@
     ]
   },
   {
+    "ContainingType": "tbs.api.Controllers.InquiryController",
+    "Method": "CreateInquiry",
+    "RelativePath": "api/inquiries",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "inquiry",
+        "Type": "tbs.api.DTO.CreateInquiryDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "tbs.api.Controllers.ServiceController",
     "Method": "GetServices",
-    "RelativePath": "api/Service",
+    "RelativePath": "api/services",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

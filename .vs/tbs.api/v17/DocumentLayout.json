@@ -3,24 +3,32 @@
   "WorkspaceRootPath": "D:\\TBS_WebApp\\tbs.api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|d:\\tbs_webapp\\tbs.api\\tbs.api\\controllers\\admininquiriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|solutionrelative:tbs.api\\controllers\\admininquiriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|d:\\tbs_webapp\\tbs.api\\tbs.api\\controllers\\servicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|solutionrelative:tbs.api\\controllers\\servicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|d:\\tbs_webapp\\tbs.api\\tbs.api\\controllers\\adminauthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|solutionrelative:tbs.api\\controllers\\adminauthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|d:\\tbs_webapp\\tbs.api\\tbs.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|solutionrelative:tbs.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|d:\\tbs_webapp\\tbs.api\\tbs.api\\controllers\\inquirycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|solutionrelative:tbs.api\\controllers\\inquirycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|d:\\tbs_webapp\\tbs.api\\tbs.api\\controllers\\admininquiriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|solutionrelative:tbs.api\\controllers\\admininquiriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|d:\\tbs_webapp\\tbs.api\\tbs.api\\dto\\admininquiryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|solutionrelative:tbs.api\\dto\\admininquiryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|d:\\tbs_webapp\\tbs.api\\tbs.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|solutionrelative:tbs.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|d:\\tbs_webapp\\tbs.api\\tbs.api\\controllers\\adminauthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|solutionrelative:tbs.api\\controllers\\adminauthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|d:\\tbs_webapp\\tbs.api\\tbs.api\\controllers\\inquirycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|solutionrelative:tbs.api\\controllers\\inquirycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|d:\\tbs_webapp\\tbs.api\\tbs.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|solutionrelative:tbs.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|d:\\tbs_webapp\\tbs.api\\tbs.api\\models\\adminuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|d:\\tbs_webapp\\tbs.api\\tbs.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|solutionrelative:tbs.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|d:\\tbs_webapp\\tbs.api\\tbs.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|solutionrelative:tbs.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|d:\\tbs_webapp\\tbs.api\\tbs.api\\models\\inquiry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -45,10 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|d:\\tbs_webapp\\tbs.api\\tbs.api\\tbs.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|solutionrelative:tbs.api\\tbs.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|d:\\tbs_webapp\\tbs.api\\tbs.api\\controllers\\servicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E880E929-5A6B-4140-93EE-98F90DEFBADF}|tbs.api\\tbs.api.csproj|solutionrelative:tbs.api\\controllers\\servicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -86,7 +86,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "launchSettings.json",
               "DocumentMoniker": "D:\\TBS_WebApp\\tbs.api\\tbs.api\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "tbs.api\\Properties\\launchSettings.json",
@@ -94,12 +94,11 @@
               "RelativeToolTip": "tbs.api\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-07-16T15:03:37.151Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-16T15:03:37.151Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "AdminUser.cs",
               "DocumentMoniker": "D:\\TBS_WebApp\\tbs.api\\tbs.api\\Models\\AdminUser.cs",
               "RelativeDocumentMoniker": "tbs.api\\Models\\AdminUser.cs",
@@ -111,7 +110,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "AdminAuthController.cs",
               "DocumentMoniker": "D:\\TBS_WebApp\\tbs.api\\tbs.api\\Controllers\\AdminAuthController.cs",
               "RelativeDocumentMoniker": "tbs.api\\Controllers\\AdminAuthController.cs",
@@ -119,25 +118,23 @@
               "RelativeToolTip": "tbs.api\\Controllers\\AdminAuthController.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAC0AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-14T11:12:58.762Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-14T11:12:58.762Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "AdminInquiriesController.cs",
               "DocumentMoniker": "D:\\TBS_WebApp\\tbs.api\\tbs.api\\Controllers\\AdminInquiriesController.cs",
               "RelativeDocumentMoniker": "tbs.api\\Controllers\\AdminInquiriesController.cs",
               "ToolTip": "D:\\TBS_WebApp\\tbs.api\\tbs.api\\Controllers\\AdminInquiriesController.cs",
               "RelativeToolTip": "tbs.api\\Controllers\\AdminInquiriesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAgwCgAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-14T07:05:53.482Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-14T07:05:53.482Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "AdminInquiryResponse.cs",
               "DocumentMoniker": "D:\\TBS_WebApp\\tbs.api\\tbs.api\\DTO\\AdminInquiryResponse.cs",
               "RelativeDocumentMoniker": "tbs.api\\DTO\\AdminInquiryResponse.cs",
@@ -145,36 +142,36 @@
               "RelativeToolTip": "tbs.api\\DTO\\AdminInquiryResponse.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-14T07:00:29.204Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-14T07:00:29.204Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "InquiryController.cs",
               "DocumentMoniker": "D:\\TBS_WebApp\\tbs.api\\tbs.api\\Controllers\\InquiryController.cs",
               "RelativeDocumentMoniker": "tbs.api\\Controllers\\InquiryController.cs",
               "ToolTip": "D:\\TBS_WebApp\\tbs.api\\tbs.api\\Controllers\\InquiryController.cs",
               "RelativeToolTip": "tbs.api\\Controllers\\InquiryController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAgAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-06T17:44:13.517Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 0,
               "Title": "ServiceController.cs",
               "DocumentMoniker": "D:\\TBS_WebApp\\tbs.api\\tbs.api\\Controllers\\ServiceController.cs",
               "RelativeDocumentMoniker": "tbs.api\\Controllers\\ServiceController.cs",
               "ToolTip": "D:\\TBS_WebApp\\tbs.api\\tbs.api\\Controllers\\ServiceController.cs",
               "RelativeToolTip": "tbs.api\\Controllers\\ServiceController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAuwAgAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-06T17:38:15.529Z"
+              "WhenOpened": "2026-07-06T17:38:15.529Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Inquiry.cs",
               "DocumentMoniker": "D:\\TBS_WebApp\\tbs.api\\tbs.api\\Models\\Inquiry.cs",
               "RelativeDocumentMoniker": "tbs.api\\Models\\Inquiry.cs",
@@ -186,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Service.cs",
               "DocumentMoniker": "D:\\TBS_WebApp\\tbs.api\\tbs.api\\Models\\Service.cs",
               "RelativeDocumentMoniker": "tbs.api\\Models\\Service.cs",
@@ -198,7 +195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "tbs.api.csproj",
               "DocumentMoniker": "D:\\TBS_WebApp\\tbs.api\\tbs.api\\tbs.api.csproj",
               "RelativeDocumentMoniker": "tbs.api\\tbs.api.csproj",
@@ -210,19 +207,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "D:\\TBS_WebApp\\tbs.api\\tbs.api\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "tbs.api\\Data\\AppDbContext.cs",
               "ToolTip": "D:\\TBS_WebApp\\tbs.api\\tbs.api\\Data\\AppDbContext.cs",
               "RelativeToolTip": "tbs.api\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAAgwBcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-06T17:07:02.358Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\TBS_WebApp\\tbs.api\\tbs.api\\Program.cs",
               "RelativeDocumentMoniker": "tbs.api\\Program.cs",

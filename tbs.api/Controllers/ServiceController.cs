@@ -6,7 +6,7 @@ using tbs.api.Models;
 namespace tbs.api.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/services")]
     public class ServiceController : ControllerBase
     {
         private readonly AppDbContext _context;
