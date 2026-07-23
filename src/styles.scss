@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+@import '@fortawesome/fontawesome-free/css/all.min.css';
 :root{
     --color-primary: #2f7d32;
     --color-primary-dark: #1f5a24;
@@ -25,45 +26,66 @@
 
 
 }
-
+/* Universal Reset */
 *{
     box-sizing: border-box;
 }
-
+/* Smooth Scrolling */
+html{
+    scroll-behavior: smooth;
+}
+/* Body Styles */
 body{
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Inter', sans-serif;
     color: var(--color-text);
     background: var(--color-page);
+    -webkit-font-smoothing:antialiased;//Makes fonts look sharper on Mac/WebKit
+    overflow-x: hidden;//prevents horizontal scrolling
+}
+/* Image Reset */
+img{
+    max-width: 100%;
+    display: block;
+}
+/* Container Class */
+.wrap{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+
 }
 a {
-    color: var(--color-primary);
     text-decoration: none;
+    color: var(--color-primary);
+    transition: color .2s ease;
 }
-
+a:hover{
+    color: var(--color-primary-dark);
+}
+/*Reveal on scroll*/
+.reveal{
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .7s cubic-bezier(.22,1,.36,1),
+    transform .7s cubic-bezier(.22,1,.36,1);
+}
+.reveal-visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+.reveal-delay-1 .visible{
+transition-delay: 0.08s;
+}
+.reveal-delay-2 .visible{
+transition-delay: 0.16s;
+}
+.reveal-delay-3 .visible{
+    transition-delay: 0.24s;
+}
 button {
     font: inherit;
 }
-
-.btn-primary{
-    border: 0;
-    border-radius: var(--radius-md);
-    padding: 14px 18px;
-    background: var(--color-primary);
-    color: white;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.btn-primary:hover{
-background: var(--color-primary-dark);
-}
-
-.btn-primary:disabled{
-    opacity: 0.7;
-    cursor: not-allowed;
-}
-
 .form-input:focus{
     outline: 3px solid rgba(47,125,50,0.18);
     border-color: var(--color-primary);

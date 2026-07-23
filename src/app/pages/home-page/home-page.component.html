@@ -1,32 +1,44 @@
 <section class="home-page">
-    <nav class="navbar">
-        <img src="/assets/Images/TBS_logo.png" class="logo" alt="TBS_logo">
 
-        <div class="nav-links">
-            <a routerLink="/">Home</a>
-            <a routerLink="/request-quote">Request Quotation</a>
-            <a routerLink="/admin/inquiries">Admin</a>
+    <!--Navigation bar-->
+    <header class="navbar" [class.scrolled]="isNavScrolled">
+        <div class="navbar-inner">
+            <a href="/">
+                <img src="/assets/Images/TBS_logo.png" class="logo" alt="TBS_logo">
+            </a>
+            <nav class="nav-links">
+                <a href="/"><i class="fa-regular fa-house"></i>Home</a>
+                <a href="/#services"><i class="fa-regular fa-truck"></i>Services</a>
+                <a routerLink="/request-quote">Request Quote</a>
+                <a routerLink="/admin/inquiries">Admin</a>
+            </nav>
         </div>
-    </nav>
-
+    </header>
+    <!--Image section-->
     <section class="hero">
-        <img class="hero-image" [src]="getCurrentSlide().image" alt="Fresh food supply">
+        <img class="hero-image" [src]="getCurrentSlide().image" alt="Fresh food supply" [class.hero-image-animate]="animateHeroImage">
         <div class="hero-overlay"></div>
 
-        <div class="hero-content">
+        <div class="hero-content" [class.hero-content-animate]="animateHeroText">
             <h1>{{getCurrentSlide().title}}</h1>
             <p>{{ getCurrentSlide().text}}</p>
-        </div>
 
-        <div class="hero-actions">
+            <div class="hero-actions">
             <a routerLink="/request-quote" class="btn-primary">Request a Quote</a>
             <a href="tel:+256757211671" class="btn-secondary">Call Now</a>
+            </div>
+
         </div>
 
-        <div class="hero-controls">
-            <button type="button" (click)="previousHeroSlide()">Prev</button>
-            <button type="button" (click)="nextHeroSlide()">Next</button>
-        </div>
+        
+
+       <!--Previous and Next Arrows-->
+        <button type="button" (click)="previousHeroSlide()" aria-label="Previous Hero Slide"
+            class="hero-arrow hero-left">‹</button>
+
+        <button type="button" (click)="nextHeroSlide()" aria-label="Next Hero Slide"
+            class="hero-arrow hero-right">›</button>
+        
 
         <div class="hero-dots">
             <button type="button" *ngFor="let slide of heroSlides; let i = index" [class.active]="i === currentSlideIndex" (click)="setHeroSlide(i)"></button>
@@ -45,7 +57,7 @@
         </div>
     </section>
 
-    <section class="services-section">
+    <section class="services-section" id="services">
         <div class="section-header">
             <p class="eyebrow">What we do</p>
             <h2>Our Services</h2>

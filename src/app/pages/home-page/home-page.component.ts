@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { CompanyServices, ServicesService } from 'src/app/core/services.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -17,7 +17,15 @@ export class HomePageComponent implements OnInit, OnDestroy {
   errorMessage = '';
   currentSlideIndex = 0;
   private heroTimer? : number;
+  animateHeroText = true;
+  animateHeroImage = true;
+  isNavScrolled = false;
 
+  @HostListener('window:scroll')
+  onWindowScroll():void{
+    this.isNavScrolled = window.scrollY > 20
+  }
+  
   heroSlides = [
     {
       title: 'The freshest produce, handpicked for you',
@@ -53,14 +61,34 @@ export class HomePageComponent implements OnInit, OnDestroy {
 
   setHeroSlide(index:number){
     this.currentSlideIndex = index;
+    this.triggerHeroImageAnimation();
+    this.triggerHeroAnimationText();
   }
 
   nextHeroSlide(){
     this.currentSlideIndex = this.currentSlideIndex === this.heroSlides.length-1 ? 0 : this.currentSlideIndex + 1;
+    this.triggerHeroImageAnimation();
+    this.triggerHeroAnimationText();
   }
 
   previousHeroSlide(){
     this.currentSlideIndex = this.currentSlideIndex === 0 ? this.heroSlides.length - 1 : this.currentSlideIndex - 1;
+    this.triggerHeroImageAnimation();
+    this.triggerHeroAnimationText();
+  }
+
+  triggerHeroAnimationText(){
+    this.animateHeroText = false;
+    setTimeout(() =>{
+      this.animateHeroText = true;
+    }, 20);
+  }
+
+  triggerHeroImageAnimation(){
+    this.animateHeroImage = false;
+    setTimeout(() =>{
+      this.animateHeroImage = true;
+    }, 20);
   }
 
   constructor(private companyServices : ServicesService){}
