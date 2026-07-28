@@ -3,15 +3,16 @@
     <!--Navigation bar-->
     <header class="navbar" [class.scrolled]="isNavScrolled">
         <div class="navbar-inner">
-            <a href="/">
-                <img src="/assets/Images/TBS_logo.png" class="logo" alt="TBS_logo">
-            </a>
-            <nav class="nav-links">
-                <a href="/"><i class="fa-regular fa-house"></i>Home</a>
-                <a href="/#services"><i class="fa-regular fa-truck"></i>Services</a>
-                <a routerLink="/request-quote">Request Quote</a>
-                <a routerLink="/admin/inquiries">Admin</a>
-            </nav>
+                <a href="/">
+                    <img src="/assets/Images/TBS_logo.png" class="logo" alt="TBS_logo">
+                </a>
+                <nav class="nav-links">
+                    <a href="/"><i class="fa-regular fa-house"></i>Home</a>
+                    <a href="/#about-us"><i class="fa-regular fa-user"></i>About Us</a>
+                     <a href="/#services"><i class="fa-regular fa-truck"></i>Services</a>
+                    <a routerLink="/request-quote">Request Quote</a>
+                    <a routerLink="/admin/inquiries">Admin</a>
+                </nav>
         </div>
     </header>
     <!--Image section-->
@@ -30,8 +31,6 @@
 
         </div>
 
-        
-
        <!--Previous and Next Arrows-->
         <button type="button" (click)="previousHeroSlide()" aria-label="Previous Hero Slide"
             class="hero-arrow hero-left">‹</button>
@@ -46,18 +45,79 @@
         </div>
     </section>
 
-    <section class="trust-section">
-        <p>Trusted by organizations including</p>
-        <div class="client-list">
-            <span>Watoto Childcare Ministries</span>
-            <span>Kampala Hospital</span>
-            <span>CoRSU Hospital</span>
-            <span>Kings College Budo</span>
-            <span>St. Marys Kisubi</span>
+    <!--Stats Counter-->
+    <div class="wrap">
+        <div class="stat-strip">
+            <div class="stat-card reveal-delay-1">
+                <div #counter class="stat-number" data-target="9" data-suffix="+">0+</div>
+                <div class="stat-label">Institutions served</div>
+            </div>
+            
+            <div class="stat-card reveal-delay-2">
+                <div #counter class="stat-number" data-target="26" data-suffix="+">0+</div>
+                <div class="stat-label">Products supplied</div>
+            </div>
+
+            <div class="stat-card reveal-delay-3">
+                <div #counter class="stat-number" data-target="100" data-suffix="%">0%</div>
+                <div class="stat-label">Farm-sourced produce</div>
+                </div>
         </div>
+    </div>
+
+    <!--About Us-->
+    <section id="about-us" class="about-section">
+        <div class="section-head reveal-delay-1">
+            <p class="eyebrow">About Us</p>
+            <h2>Reliable supply and delivery for everyday food needs</h2>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-photo reveal-delay-2">
+                <div class="photo-frame">
+                    <img src="/assets/Images/Home-fruits.jpg" alt="TBS-Groceries">
+                </div>
+                <div class="about-badge">
+                   <i class="fa-solid fa-seedling"></i>
+                    <span>Farm to institution</span>
+                </div>
+            </div>
+
+            <div class="about-text reveal-delay-3">
+                <p>Tukahiirwa Bernard Services is a registered company that supplies and delivers fresh local foods and groceries to schools, 
+                    hospitals, organizations, and homes around Kampala.</p>
+                <p>The company focuses on dependable farm sourcing, clean produce, 
+                    timely delivery, and long-term client relationships.</p>
+                <div class="about-points">
+                    <div class="about-chip">
+                        <span class="chip-icon"><i class="fa-solid fa-carrot"></i></span>
+                        <span>Fresh local foods</span>
+                    </div>
+                    <div class="about-chip">
+                        <span class="chip-icon"><i class="fa-solid fa-bag-shopping"></i></span>
+                        <span>Grocery supply</span>
+                    </div>
+                    <div class="about-chip">
+                        <span class="chip-icon"><i class="fa-solid fa-boxes-stacked"></i></span>
+                        <span>Bulk institutional orders</span>
+                    </div>
+                    <div class="about-chip">
+                        <span class="chip-icon"><i class="fa-solid fa-calendar-days"></i></span>
+                        <span>Scheduled deliveries</span>
+                    </div>
+
+                </div>
+            </div>
+          
+
+           
+        </div>
+
     </section>
 
-    <section class="services-section" id="services">
+
+
+     <section class="services-section" id="services">
         <div class="section-header">
             <p class="eyebrow">What we do</p>
             <h2>Our Services</h2>
@@ -75,6 +135,17 @@
 
         </div>
 
+    </section>
+
+    <section class="trust-section">
+        <p>Trusted by organizations including</p>
+        <div class="client-list">
+            <span>Watoto Childcare Ministries</span>
+            <span>Kampala Hospital</span>
+            <span>CoRSU Hospital</span>
+            <span>Kings College Budo</span>
+            <span>St. Marys Kisubi</span>
+        </div>
     </section>
 
 </section>

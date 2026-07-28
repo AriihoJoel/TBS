@@ -5,7 +5,6 @@
     --color-primary-dark: #1f5a24;
     --color-primary-light: #e7f4e8;
 
-
     --color-accent: #f2b705;
     --color-danger: #b3261e;
     
@@ -39,7 +38,7 @@ body{
     margin: 0;
     font-family: 'Inter', sans-serif;
     color: var(--color-text);
-    background: var(--color-page);
+    background: var(--color-surface);
     -webkit-font-smoothing:antialiased;//Makes fonts look sharper on Mac/WebKit
     overflow-x: hidden;//prevents horizontal scrolling
 }
@@ -53,7 +52,6 @@ img{
     max-width: 1080px;
     margin: 0 auto;
     padding: 0 24px;
-
 }
 a {
     text-decoration: none;

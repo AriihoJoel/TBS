@@ -1,6 +1,5 @@
 .home-page{
     min-height: 100vh;
-    background: var(--color-page);
 }
 .navbar{
    position: sticky;
@@ -99,7 +98,6 @@
     color: white;
     background: linear-gradient(90deg,rgba(0, 0, 0, 0.72) 0%,rgba(0, 0, 0, 0.4) 55%,rgba(0, 0, 0, 0.15) 100%);
 }
- 
 .hero-content{
     position: relative;
     z-index: 2;
@@ -203,6 +201,180 @@ h1{
   gap: 14px;
   margin-top: 26px;  
 }
+
+
+//Stats Counter
+.stat-strip{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 48px;
+    margin-bottom: 24px;
+}
+.stat-card{
+    background: var(--color-page);
+    border: 1px solid var(--line-strong);
+    border-radius: 14px;
+    padding: 22px 20px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(22,52,42,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.stat-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 14px 28px rgba(22,52,42,0.12);
+}
+.stat-number{
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 34px;
+    color: var(--color-primary-dark);
+    line-height: 1;
+}
+.stat-label{
+    font-size: 13px;
+    color: var(--color-muted);
+    margin-top: 8px;
+    font-weight: 600;
+}
+//About Us
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.about-section{
+    padding: 16px 48px 48px 48px;
+    background: var(--color-surface);
+}
+.about-grid{
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 44px;
+    align-items: center;
+}
+.about-photo{
+    position: relative;
+}
+.about-photo.photo-frame{
+    overflow: hidden;
+    display: block;
+}
+.photo-frame img{
+    border-radius: var(--radius-md);
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+.about-badge{
+    position: absolute;
+    left: 20px;
+    bottom: -22px;
+    background: var(--color-primary);
+    color: #fff;
+    border-radius: 12px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 12px 26px rgba(44,91,55,0.3);
+    animation: floaty 4s ease-in-out infinite;
+    //transition: transform 0.3s ease;
+}
+.about-badge:hover{
+    animation-play-state: paused; 
+}
+.photo-frame:hover img{
+    transform: translateY(-3px) scale(1.08);
+}
+.about-badge i{
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+.about-badge span{
+    font-weight: 700;
+    font-size: 13.5px;
+    white-space: nowrap;
+}
+.about-text p{
+    color: var(--color-forest);
+    line-height: 1.75;
+    font-size: 15.5px;
+    margin: 0 0 18px;
+}
+.about-points{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 8px;
+}
+.about-chip{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--color-page);
+    border: 1px solid var(--line-strong);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--color-forest);
+    transition: all 0.25s ease;
+    cursor: default;
+}
+.about-chip:hover{
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 22px rgba(22,52,42,0.12);
+}
+.about-chip .chip-icon{
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    background: var(--color-primary-light);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+}
+.about-chip:hover .chip-icon{
+    background: var(--color-primary);
+}
+.about-chip .chip-icon i{
+    width: 17px;
+    height: 17px;
+    color: var(--color-primary-dark);
+    transition: color 0.25s ease;
+}
+.about-chip:hover .chip-icon i{
+    color: #fff;
+}
+//Sections
+section{
+margin-bottom: 64px;
+}
+.section-head{
+    max-width: 640px;
+    margin-bottom: 32px;
+}
+.section-head h2{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 30px;
+    color: var(--color-forest);
+    margin: 0 0 14px;
+    letter-spacing: 0.5px;
+}
+.section-head p{
+    color: var(--color-muted);
+    line-height: 1.65;
+    font-size: 15.5px;
+    margin: 0;
+}
+
 .btn-primary, .btn-secondary{
     border-radius: var(--radius-md);
     padding: 14px 18px;

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener,AfterViewInit,ElementRef,QueryList, ViewChildren} from '@angular/core';
 import { CompanyServices, ServicesService } from 'src/app/core/services.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./home-page.component.scss'],
   imports: [RouterModule, CommonModule]
 })
-export class HomePageComponent implements OnInit, OnDestroy {
+export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
 
   services : CompanyServices[] = [];
   loading = true;
@@ -20,6 +20,71 @@ export class HomePageComponent implements OnInit, OnDestroy {
   animateHeroText = true;
   animateHeroImage = true;
   isNavScrolled = false;
+//finds all elements with #counter reference in HTML and creates a querylist collection of those elements.
+  @ViewChildren('counter')
+  counters!:QueryList<ElementRef<HTMLElement>>;
+
+  private counterObserver? : IntersectionObserver;// Detects when a counter enters a viewport
+  private animationFrames : number[] = []; //stores requestAnimationFrame IDs for cleanup
+
+//After View Renders
+  ngAfterViewInit(): void {
+    //Create an observer watching all counters
+    this.counterObserver = new IntersectionObserver(
+      entries => {
+        //for each counter element, check if visible(50%+ in viewport), if not, wait until it becomes visible
+        entries.forEach(entry => {
+          if(!entry.isIntersecting){
+            return;
+          }
+
+          //if visible, read data-target attribute, start animation, stop observing
+          const counterElement = entry.target as HTMLElement;
+          const target = Number(counterElement.dataset['target']);
+
+          if(!Number.isNaN(target)){
+            this.animateCounter(counterElement, target);
+          }
+
+          //Stop observing after the counter has run once.
+          this.counterObserver?.unobserve(counterElement);
+        });
+      },
+      {
+        threshold: 0.5
+      }
+    );
+    //Start observing each counter
+    this.counters.forEach(counter => {
+      this.counterObserver?.observe(counter.nativeElement);
+    });
+  }
+
+  private animateCounter(element: HTMLElement, target: number, duration = 1500): void{
+    const startTime = performance.now();
+    const suffix = element.dataset['suffix'] ??  '';
+
+    const updateCounter = (currentTime:number) : void => {
+      const elapsedTime = currentTime - startTime;
+      const progress = Math.min(elapsedTime/duration, 1);
+
+      //Ease-out animation: starts quickly and slows near the target
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+      const currentValue = Math.round(target * easedProgress);
+
+      element.textContent = `${currentValue}${suffix}`;
+
+      if(progress < 1){
+        const frameId = requestAnimationFrame(updateCounter);
+        this.animationFrames.push(frameId);
+      } else{
+        element.textContent = `${target}${suffix}`;
+      }
+    };
+
+    const frameId = requestAnimationFrame(updateCounter);
+    this.animationFrames.push(frameId);
+  }
 
   @HostListener('window:scroll')
   onWindowScroll():void{
@@ -127,6 +192,11 @@ export class HomePageComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.stopHeroAutoSlide();
+    //clean up everything!
+    this.counterObserver?.disconnect();
+    this.animationFrames.forEach(frameId => {
+      cancelAnimationFrame(frameId);
+    })
   }
 
 }
