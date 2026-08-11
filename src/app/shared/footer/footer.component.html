@@ -1,0 +1,70 @@
+<footer class="site-footer">
+    <div class="accent-bar"></div>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <img src="/assets/Images/TBS_logo.png" alt="TBS Logo" class="footer-logo">
+            <p>Fresh, reliable food and grocery supply for institutions across Uganda.</p>
+            <a routerLink="/request-quote" class="footer-quote"><i class="fa-regular fa-file-lines"></i> Request Quote</a>
+        </div>
+
+        <div class="footer-col">
+            <h4>Explore</h4>
+            <span class="footer-underline"></span>
+            <nav class="footer-links">
+                <a href="/"><i class="fa-solid fa-caret-right"></i> Home</a>
+                <a href="/#about-us"><i class="fa-solid fa-caret-right"></i> About Us</a>
+                <a href="/#services"><i class="fa-solid fa-caret-right"></i> Services</a>
+                <a href="/#clients"><i class="fa-solid fa-caret-right"></i> Clients</a>
+            </nav>
+        </div>
+
+        <div class="footer-col">
+            <h4>Services</h4>
+            <span class="footer-underline"></span>
+            <nav class="footer-links">
+                <a href="/#services"><i class="fa-solid fa-caret-right"></i> Fresh Food Supply</a>
+                <a href="/#services"><i class="fa-solid fa-caret-right"></i> Grocery Supply</a>
+                <a href="/#services"><i class="fa-solid fa-caret-right"></i> Bulk Institutional Supply</a>
+                <a href="/#services"><i class="fa-solid fa-caret-right"></i> Delivery Services</a>
+            </nav>
+        </div>
+
+        <div class="footer-col footer-contact">
+            <h4>Contact Us</h4>
+            <span class="footer-underline"></span>
+            
+            <div class="contact-item">
+                <span class="contact-icon"><i class="fa-solid fa-square-phone"></i></span>
+                <div>
+                    <p class="contact-label">Call Anytime</p>
+                    <a href="tel: +256700934010">+256 700934010</a>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <span class="contact-icon"><i class="fa-regular fa-envelope"></i></span>
+                <div>
+                    <p class="contact-label">Send email</p>
+                    <a href="mailto:tukahiirwabenard2017@gmail.com">tukahiirwabenard2017@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span>
+                <div>
+                    <p class="contact-label">Find us</p>
+                    <a href="#">Plot 4, Market Square, Nakasero</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; {{currentYear}} Tukahiirwa Bernard Services — "simplifying life"</p>
+    </div>
+
+    <button class="back-top" [class.visible]="showBackToTop" (click)="scrollToTop()" aria-label="Back to top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+</footer>

@@ -1,0 +1,16 @@
+<!--Navigation bar-->
+    <header class="navbar" [class.scrolled]="isNavScrolled">
+        <div class="navbar-inner">
+                <a href="/">
+                    <img src="/assets/Images/TBS_logo.png" class="logo" alt="TBS_logo">
+                </a>
+                <nav class="nav-links">
+                    <a href="/"><i class="fa-regular fa-house"></i>Home</a>
+                    <a href="/#about-us"><i class="fa-regular fa-user"></i>About Us</a>
+                     <a href="/#services"><i class="fa-regular fa-truck"></i>Services</a>
+                      <a href="/#clients"><i class="fa-regular fa-address-book"></i>Clients</a>
+                    <a routerLink="/request-quote">Request Quote</a>
+                    <a routerLink="/admin/inquiries">Admin</a>
+                </nav>
+        </div>
+    </header>

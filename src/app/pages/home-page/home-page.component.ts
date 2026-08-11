@@ -1,14 +1,27 @@
-import { Component, OnInit, OnDestroy, HostListener,AfterViewInit,ElementRef,QueryList, ViewChildren} from '@angular/core';
+import { Component, OnInit, OnDestroy,AfterViewInit,ElementRef,QueryList, ViewChildren} from '@angular/core';
 import { CompanyServices, ServicesService } from 'src/app/core/services.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {IconDefinition} from '@fortawesome/fontawesome-svg-core';
+import {
+  faLeaf,
+  faBasketShopping,
+  faBuilding,
+  faTruck,
+  faClipboardList,
+  faCircleCheck,
+  faBoxOpen,
+} from '@fortawesome/free-solid-svg-icons';
+
+
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss'],
-  imports: [RouterModule, CommonModule]
+  imports: [RouterModule, CommonModule, FontAwesomeModule]
 })
 export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
 
@@ -19,7 +32,17 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
   private heroTimer? : number;
   animateHeroText = true;
   animateHeroImage = true;
-  isNavScrolled = false;
+  processGallery = [
+    {image: '/assets/Images/bananas.jpg', alt: 'Fresh Matooke', label:'Matooke'},
+    {image: '/assets/Images/chickens.jpg', alt: 'Fresh Chicken', label:'Poultry'},
+    {image: '/assets/Images/beef.png', alt: 'Fresh Beef', label:'Beef'},
+    {image: '/assets/Images/groceries.png', alt: 'Fresh Groceries', label:'Groceries'}
+  ];
+ productColumns = [
+  ['Maize flour', 'Rice', 'Sugar', 'Tea leaves', 'Matooke', 'Sweet potatoes', 'Cassava', 'Bogoya', 'Ndizi'],
+  ['Vegetables', 'Tomatoes', 'Onions', 'Cabbages', 'Water melon', 'Pineapples', 'Passion fruits', 'Millet flour', 'Soya flour'],
+  ['Eggs', 'Cooking oil', 'Beef', 'Chicken (off layers)', 'Fish', 'Beans', 'Peas', 'Groundnuts']
+];
 //finds all elements with #counter reference in HTML and creates a querylist collection of those elements.
   @ViewChildren('counter')
   counters!:QueryList<ElementRef<HTMLElement>>;
@@ -27,6 +50,17 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
   private counterObserver? : IntersectionObserver;// Detects when a counter enters a viewport
   private animationFrames : number[] = []; //stores requestAnimationFrame IDs for cleanup
 
+  serviceIcons : Record<string, IconDefinition> = {
+    'leaf': faLeaf,
+    'shopping-basket': faBasketShopping,
+    'building': faBuilding,
+    'truck': faTruck,
+    'clipboard-list': faClipboardList,
+    'badge-check': faCircleCheck,
+  };
+  getServiceIcon(iconName: string) :  IconDefinition{
+    return this.serviceIcons[iconName] || faBoxOpen;
+  }
 //After View Renders
   ngAfterViewInit(): void {
     //Create an observer watching all counters
@@ -84,11 +118,6 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
 
     const frameId = requestAnimationFrame(updateCounter);
     this.animationFrames.push(frameId);
-  }
-
-  @HostListener('window:scroll')
-  onWindowScroll():void{
-    this.isNavScrolled = window.scrollY > 20
   }
   
   heroSlides = [

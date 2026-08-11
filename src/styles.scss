@@ -7,7 +7,7 @@
 
     --color-accent: #f2b705;
     --color-danger: #b3261e;
-    
+
     --color-text: #18251d;
     --color-muted: #66756b;
     --color-border: #d7e2d9;
@@ -40,7 +40,7 @@ body{
     color: var(--color-text);
     background: var(--color-surface);
     -webkit-font-smoothing:antialiased;//Makes fonts look sharper on Mac/WebKit
-    overflow-x: hidden;//prevents horizontal scrolling
+    overflow-x: clip;//prevents horizontal scrolling without breaking position: sticky
 }
 /* Image Reset */
 img{

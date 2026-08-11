@@ -1,20 +1,4 @@
 <section class="home-page">
-
-    <!--Navigation bar-->
-    <header class="navbar" [class.scrolled]="isNavScrolled">
-        <div class="navbar-inner">
-                <a href="/">
-                    <img src="/assets/Images/TBS_logo.png" class="logo" alt="TBS_logo">
-                </a>
-                <nav class="nav-links">
-                    <a href="/"><i class="fa-regular fa-house"></i>Home</a>
-                    <a href="/#about-us"><i class="fa-regular fa-user"></i>About Us</a>
-                     <a href="/#services"><i class="fa-regular fa-truck"></i>Services</a>
-                    <a routerLink="/request-quote">Request Quote</a>
-                    <a routerLink="/admin/inquiries">Admin</a>
-                </nav>
-        </div>
-    </header>
     <!--Image section-->
     <section class="hero">
         <img class="hero-image" [src]="getCurrentSlide().image" alt="Fresh food supply" [class.hero-image-animate]="animateHeroImage">
@@ -116,9 +100,9 @@
     </section>
 
 
-
-     <section class="services-section" id="services">
-        <div class="section-header">
+    <!--Services-->
+     <section id="services" class="services-container">
+        <div class="section-head" reveal-delay-1>
             <p class="eyebrow">What we do</p>
             <h2>Our Services</h2>
         </div>
@@ -127,25 +111,80 @@
         <p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
 
         <div class="service-grid" *ngIf="!loading && services.length">
-            <article class="service-card" *ngFor="let service of services">
-                <div class="service-icon">{{service.iconName}}</div>
+            <div class="service-card" reveal-delay-2 *ngFor="let service of services">
+               <div class="service-icon">
+                 <fa-icon [icon]="getServiceIcon(service.iconName)"></fa-icon>
+                </div>
                 <h3>{{service.name}}</h3>
                 <p>{{service.description}}</p>
-            </article>
+            </div>
 
         </div>
 
     </section>
 
-    <section class="trust-section">
-        <p>Trusted by organizations including</p>
-        <div class="client-list">
-            <span>Watoto Childcare Ministries</span>
-            <span>Kampala Hospital</span>
-            <span>CoRSU Hospital</span>
-            <span>Kings College Budo</span>
-            <span>St. Marys Kisubi</span>
+    <section id="what-we-do" class="services-container process-section">
+        <div class="section-head" reveal-delay-1>
+            <p class="eyebrow">More on our process</p>
+            <h2>Bridging farmers and institutions</h2>
+            <p>Schools, hospitals, and other institutions struggle to access quality fresh foods and 
+                bulk fruits and vegetables — and to get them delivered on time before they spoil. 
+                We solve that by buying agricultural produce directly from farmers at a fair price, transporting it to Kampala, 
+                and delivering it to schools, hotels, hospitals and restaurants.</p>
         </div>
+       <div class="process-body">
+    <div class="process-grid reveal-delay-2">
+        <div class="process-tile" *ngFor="let item of processGallery">
+            <img [src]="item.image" [alt]="item.alt">
+            <div class="process-overlay">
+                <span>{{ item.label }}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="process-products" reveal-delay-3>
+        <p class="process-label">Some of the products we supply include:</p>
+        <div class="product-columns">
+            <ul *ngFor="let column of productColumns">
+                <li *ngFor="let product of column">{{ product }}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    </section>
+
+    <!--Clients-->
+    <section id="clients" class="services-container"> 
+        <div class="client-head" reveal-delay-1>
+            <p class="eyebrow">Our clientele</p>
+        </div>
+
+        <div class="client-intro" reveal-delay-2>
+                <h2>Trusted by schools, hospitals and institutions</h2>
+                <p>We're proud to serve a diverse range of clients who trust us for fresh, reliable and high-quality supply of matooke, fresh foods, fruits and vegetables - including
+                Kampala Hospital, CoRSU Hospital, Kings College Budo, St. Marys College Kisubi, Watoto Child Care Ministries, Keba Express Hotel, Uganda Golf Club and many more.</p>
+            </div>
+        <div class="client-logos" reveal-delay-3>
+            <div class="client-track">
+                <div class="logo-item"><img src="/assets/Images/budo.png" alt="KCB"></div>
+                <div class="logo-item"><img src="/assets/Images/corsu.jpeg" alt="CORSU"></div>
+                <div class="logo-item"><img src="/assets/Images/khl.jpeg" alt="KHL"></div>
+                <div class="logo-item"><img src="/assets/Images/smack.jpeg" alt="SMACK"></div>
+                <div class="logo-item"><img src="/assets/Images/watoto.png" alt="Watoto"></div>
+                <div class="logo-item"><img src="/assets/Images/golf.jpeg" alt="UGC"></div>
+                <div class="logo-item"><img src="/assets/Images/keba.jpeg" alt="KEBA"></div>
+                <!--Duplicate images for seamless scrolling-->
+                <div class="logo-item" aria-hidden="true"><img src="/assets/Images/budo.png" alt=""></div>
+                <div class="logo-item" aria-hidden="true"><img src="/assets/Images/corsu.jpeg" alt=""></div>  
+                <div class="logo-item" aria-hidden="true"><img src="/assets/Images/khl.jpeg" alt="KHL"></div>
+                <div class="logo-item" aria-hidden="true"><img src="/assets/Images/smack.jpeg" alt="SMACK"></div>
+                <div class="logo-item" aria-hidden="true"><img src="/assets/Images/watoto.png" alt="Watoto"></div>
+                <div class="logo-item" aria-hidden="true"><img src="/assets/Images/golf.jpeg" alt="UGC"></div>
+                <div class="logo-item"><img src="/assets/Images/keba.jpeg" alt="KEBA"></div>
+            </div>
+        </div>
+
     </section>
 
 </section>

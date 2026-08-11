@@ -9,6 +9,8 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { AdminInquiriesComponent } from './pages/admin-inquiries/admin-inquiries.component';
 import { RequestQuoteComponent } from './pages/request-quote/request-quote.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,10 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     AppRoutingModule,
     ReactiveFormsModule,
     RequestQuoteComponent,
-    HomePageComponent
+    HomePageComponent,
+    NavbarComponent,
+    FooterComponent
+
   ],
   providers: [
     provideHttpClient(withInterceptorsFromDi()),
