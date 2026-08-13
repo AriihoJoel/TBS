@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import '@fortawesome/fontawesome-free/css/all.min.css';
 :root{
     --color-primary: #2f7d32;
@@ -72,13 +73,13 @@ a:hover{
     opacity: 1;
     transform: translateY(0);
 }
-.reveal-delay-1 .visible{
+.reveal-delay-1 .reveal-visible{
 transition-delay: 0.08s;
 }
-.reveal-delay-2 .visible{
+.reveal-delay-2 .reveal-visible{
 transition-delay: 0.16s;
 }
-.reveal-delay-3 .visible{
+.reveal-delay-3 .reveal-visible{
     transition-delay: 0.24s;
 }
 button {

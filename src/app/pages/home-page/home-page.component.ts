@@ -32,11 +32,10 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
   private heroTimer? : number;
   animateHeroText = true;
   animateHeroImage = true;
+  private revealObserver? : IntersectionObserver;//detects when elements enter or exit the viewport and and triggers animations
   processGallery = [
     {image: '/assets/Images/bananas.jpg', alt: 'Fresh Matooke', label:'Matooke'},
-    {image: '/assets/Images/chickens.jpg', alt: 'Fresh Chicken', label:'Poultry'},
-    {image: '/assets/Images/beef.png', alt: 'Fresh Beef', label:'Beef'},
-    {image: '/assets/Images/groceries.png', alt: 'Fresh Groceries', label:'Groceries'}
+    {image: '/assets/Images/chickens.jpg', alt: 'Fresh Chicken', label:'Poultry'}
   ];
  productColumns = [
   ['Maize flour', 'Rice', 'Sugar', 'Tea leaves', 'Matooke', 'Sweet potatoes', 'Cassava', 'Bogoya', 'Ndizi'],
@@ -46,7 +45,7 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
 //finds all elements with #counter reference in HTML and creates a querylist collection of those elements.
   @ViewChildren('counter')
   counters!:QueryList<ElementRef<HTMLElement>>;
-
+ 
   private counterObserver? : IntersectionObserver;// Detects when a counter enters a viewport
   private animationFrames : number[] = []; //stores requestAnimationFrame IDs for cleanup
 
@@ -92,8 +91,27 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
     this.counters.forEach(counter => {
       this.counterObserver?.observe(counter.nativeElement);
     });
+
+    const revealElements = this.elementRef.nativeElement.querySelectorAll('.reveal');//finds all elements with CSS class .reveal in the component.
+    
   }
 
+  private setupRevealObserver():void{
+    if(!this.revealObserver){
+      this.revealObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if(!entry.isIntersecting) return; //skip if not visible
+          entry.target.classList.add('reveal-visible')//Add animation class
+          this.revealObserver?.unobserve(entry.target);//stop observing once shown
+        });
+      },
+      {threshold:0.15} //Trigger when 15% of the element is visible
+    );
+    const revealElements = this.elementRef.nativeElement.querySelectorAll('.reveal:not(.reveal-observed');// :not(.reveal-observed) so that a second call doesn't re-register elements already being watched
+    revealElements.forEach((el:Element) => this.revealObserver?.observe(el));//begins to watch all .reveal elements
+    }
+  }
   private animateCounter(element: HTMLElement, target: number, duration = 1500): void{
     const startTime = performance.now();
     const suffix = element.dataset['suffix'] ??  '';
@@ -185,7 +203,9 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
     }, 20);
   }
 
-  constructor(private companyServices : ServicesService){}
+  constructor(private companyServices : ServicesService,
+    private elementRef: ElementRef
+  ){}
 
 
   ngOnInit(): void {
@@ -195,6 +215,7 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
         this.services = data;
         this.loading = false;
         this.startHeroAutoSlide();
+        setTimeout(() => this.setupRevealObserver(), 0);
        
       },
 
@@ -223,6 +244,7 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
     this.stopHeroAutoSlide();
     //clean up everything!
     this.counterObserver?.disconnect();
+    this.revealObserver?.disconnect();
     this.animationFrames.forEach(frameId => {
       cancelAnimationFrame(frameId);
     })

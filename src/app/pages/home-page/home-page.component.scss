@@ -114,7 +114,7 @@ z-index: 2;
 }
 .eyebrow{
     margin: 0 0 10px;
-    color: var(--color-muted);
+    color: var(--color-primary-dark);
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -384,17 +384,16 @@ margin-bottom: 64px;
 }
 //Processes
 .process-body{
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 40px;
-    align-items: flex-start;
+    align-items: start;
     margin-top: 32px;
 }
 .process-grid{
-    flex: 1 1 460px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
+    gap: 16px;
 }
 .process-tile{
     position: relative;
@@ -436,18 +435,18 @@ margin-bottom: 64px;
     transform: translateY(8px);
     transition: transform 0.3s ease;
 }
-.process-products{
-    flex: 1 1 360px;
-}
-.process-label{
-    font-weight: 700;
-    color: var(--color-forest);
-    margin: 0 0 16px;
+.process-products p{
+    color:var(--color-forest);
+    line-height: 1.7;
+    font-size: 15px;
+    margin: 0 0 18px;
+    font-weight: 600;
 }
 .product-columns{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 12px 24px;
+    margin-top: 8px;
 }
 .product-columns ul{
     list-style: none;
@@ -455,22 +454,33 @@ margin-bottom: 64px;
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 10px
+    gap: 9px;
 }
 .product-columns li{
-    position: relative;
-    padding-left: 16px;
+    font-family: 'IBM Plex Mono', monospace;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: default;
+    transition: color 0.2s ease, transform 0.2s ease;
     color: var(--color-text);
-    font-size: 14.5px;
-}.product-columns li ::before{
+    font-size: 13.5px;
+}
+.product-columns li::before{
     content: "";
-    position: absolute;
-    left: 0;
-    top: 8px;
     width: 6px;
     height: 6px;
     border-radius: 50%;
     background: var(--color-primary);
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+.product-columns li:hover{
+    color: var(--color-primary);
+    transform: translateX(4px);
+}
+.product-columns li:hover::before{
+    transform: scale(1.6);
 }
 @media (max-width: 640px){
     .product-columns{
@@ -511,8 +521,8 @@ margin-bottom: 64px;
     border-radius: 24px;
     padding: 40px 0;
     box-shadow: 0 24px 48px rgba(22,52,42,0.18);
-    -webkit-mask-image: linear-gradient(to right, transparent black 8%, black 92%, transparent);
-    mask-image: linear-gradient(to right, transparent black 8%  black 92%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 8%  black 92%, transparent);
 }
 .client-track{
     display: flex;
@@ -553,6 +563,117 @@ margin-bottom: 64px;
     to{ transform: translateX(-50%); }
 }
 
+
+//Why Us
+.why-grid{
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 40px;
+    align-items: center;
+}
+.why-photo{
+    position: relative;
+    margin-bottom: 56px; //reserves room for the promise-card now that it's absolutely positioned
+}
+.photo-frame{
+    overflow: hidden;
+    display: block;
+    border-radius: var(--radius-md);
+    box-shadow: 0 20px 40px rgba(22,55,42,0.16);
+}
+.promise-card{
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    bottom: -28px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: var(--color-primary-dark);
+    color: #fff;
+    border-radius: 16px;
+    padding: 20px 22px;
+    box-shadow: 0 16px 32px rgba(22,52,42,0.3);
+    animation: floaty 4s ease-in-out infinite;
+    transition: background 0.3s ease;
+}
+.promise-card:hover{
+    background: var(--color-primary);
+    animation-play-state: paused;
+}
+.promise-icon{
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+.promise-card h3{
+    margin: 0 0 6px;
+    font-size: 15px;
+    font-weight: 700;
+}
+.promise-card p{
+    margin: 0;
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: #cfe0d2;
+}
+.why-text h3{
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    color: var(--color-forest);
+    margin: 0 0 12px;
+}
+.why-text p{
+    color: var(--color-muted);
+    line-height: 1.7;
+    font-size: 15px;
+    margin: 0 0 22px;
+}
+
+.feature-pills{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+.pill{
+    background: var(--color-primary-light);
+    color: var(--color-forest);
+    border-radius: 10px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+.pill:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(22,52,42,0.15);
+}
+.pill .check{
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #fff;
+    color: var(--color-primary-dark);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: all 0.25s ease;
+}
+.pill:hover .check{
+    background: var(--color-primary-dark);
+    color: #fff;
+}
 @keyframes heroFadeUp{
     from{
         opacity: 0;
@@ -590,6 +711,12 @@ margin-bottom: 64px;
   .hero-right {
     right: 12px;
   }
+
+  @media (max-width: 780px){
+    .why-grid{
+        grid-template-columns: 1fr;
+    }
+}
   @media (max-width: 600px) {
   .service-grid {
     grid-template-columns: 1fr;

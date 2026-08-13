@@ -29,35 +29,15 @@
         </div>
     </section>
 
-    <!--Stats Counter-->
-    <div class="wrap">
-        <div class="stat-strip">
-            <div class="stat-card reveal-delay-1">
-                <div #counter class="stat-number" data-target="9" data-suffix="+">0+</div>
-                <div class="stat-label">Institutions served</div>
-            </div>
-            
-            <div class="stat-card reveal-delay-2">
-                <div #counter class="stat-number" data-target="26" data-suffix="+">0+</div>
-                <div class="stat-label">Products supplied</div>
-            </div>
-
-            <div class="stat-card reveal-delay-3">
-                <div #counter class="stat-number" data-target="100" data-suffix="%">0%</div>
-                <div class="stat-label">Farm-sourced produce</div>
-                </div>
-        </div>
-    </div>
-
     <!--About Us-->
     <section id="about-us" class="about-section">
-        <div class="section-head reveal-delay-1">
+        <div class="section-head reveal reveal-delay-1">
             <p class="eyebrow">About Us</p>
             <h2>Reliable supply and delivery for everyday food needs</h2>
         </div>
 
         <div class="about-grid">
-            <div class="about-photo reveal-delay-2">
+            <div class="about-photo reveal reveal-delay-2">
                 <div class="photo-frame">
                     <img src="/assets/Images/Home-fruits.jpg" alt="TBS-Groceries">
                 </div>
@@ -67,7 +47,7 @@
                 </div>
             </div>
 
-            <div class="about-text reveal-delay-3">
+            <div class="about-text reveal reveal-delay-3">
                 <p>Tukahiirwa Bernard Services is a registered company that supplies and delivers fresh local foods and groceries to schools, 
                     hospitals, organizations, and homes around Kampala.</p>
                 <p>The company focuses on dependable farm sourcing, clean produce, 
@@ -102,7 +82,7 @@
 
     <!--Services-->
      <section id="services" class="services-container">
-        <div class="section-head" reveal-delay-1>
+        <div class="section-head reveal reveal-delay-1" >
             <p class="eyebrow">What we do</p>
             <h2>Our Services</h2>
         </div>
@@ -110,8 +90,8 @@
         <p *ngIf="loading">Loading Services...</p>
         <p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
 
-        <div class="service-grid" *ngIf="!loading && services.length">
-            <div class="service-card" reveal-delay-2 *ngFor="let service of services">
+        <div class="service-grid reveal reveal-delay-2" *ngIf="!loading && services.length">
+            <div class="service-card" *ngFor="let service of services">
                <div class="service-icon">
                  <fa-icon [icon]="getServiceIcon(service.iconName)"></fa-icon>
                 </div>
@@ -123,49 +103,117 @@
 
     </section>
 
+
+    <!--More on Processes-->
     <section id="what-we-do" class="services-container process-section">
-        <div class="section-head" reveal-delay-1>
+        <div class="client-head reveal reveal-delay-1">
             <p class="eyebrow">More on our process</p>
+        </div>
+
+        <div class="client-intro reveal reveal-delay-2">
             <h2>Bridging farmers and institutions</h2>
             <p>Schools, hospitals, and other institutions struggle to access quality fresh foods and 
                 bulk fruits and vegetables — and to get them delivered on time before they spoil. 
                 We solve that by buying agricultural produce directly from farmers at a fair price, transporting it to Kampala, 
                 and delivering it to schools, hotels, hospitals and restaurants.</p>
         </div>
-       <div class="process-body">
-    <div class="process-grid reveal-delay-2">
-        <div class="process-tile" *ngFor="let item of processGallery">
-            <img [src]="item.image" [alt]="item.alt">
-            <div class="process-overlay">
-                <span>{{ item.label }}</span>
+        
+        <div class="process-body">
+                <div class="process-grid reveal reveal-delay-3">
+                    <div class="process-tile" *ngFor="let item of processGallery">
+                        <img [src]="item.image" [alt]="item.alt">
+                        <div class="process-overlay">
+                            <span>{{ item.label }}</span>
+                        </div>
+                    </div>
             </div>
-        </div>
-    </div>
 
-    <div class="process-products" reveal-delay-3>
-        <p class="process-label">Some of the products we supply include:</p>
-        <div class="product-columns">
-            <ul *ngFor="let column of productColumns">
-                <li *ngFor="let product of column">{{ product }}</li>
-            </ul>
+                <div class="process-products reveal reveal-delay-3">
+                    <p>Some of the products we supply include:</p>
+                    <div class="product-columns">
+                        <ul *ngFor="let column of productColumns">
+                            <li *ngFor="let product of column">{{ product }}</li>
+                        </ul>
+                    </div>
+                </div>
         </div>
-    </div>
-</div>
 
     </section>
 
+
+    <!--Why Us-->
+    <section id="why-us" class="services-container">
+        <div class="section-head reveal reveal-delay-1">
+            <p class="eyebrow">Why Us</p>
+            <h2>Freshness, reliability and trust</h2>
+            <p>We don't just supply food, we deliver freshness, reliability and trust. As trusted suppliers of matooke, fresh foods, fruits and vegetables,
+                we're committed to giving our clients the very best quality delivered with love at competitive prices.
+            </p>
+        </div>
+
+        <div class="why-grid">
+            <div class="why-photo reveal reveal-delay-1">
+                <div class="photo-frame">
+                    <img src="/assets/Images/vegetables.jpg" alt="TBS_Vegetables">
+                </div>
+                <div class="promise-card">
+                    <span class="promise-icon"><i class="fa-solid fa-award"></i></span>
+                    <div>
+                        <h3>Our Promise</h3>
+                        <p>To deliver farm-fresh produce that meets the highest standards of quality, reliability and affordability.</p>
+                    </div>
+                </div>
+            </div>
+
+            <diV class="why-text reveal reveal-delay-2">
+                <h3>Simple, effective and affordable</h3>
+                <p>We source our produce directly from trusted farmers to ensure every delivery is fresh, clean and market-ready.
+                    No overstayed stock. No compromise on quality.
+                </p>
+            
+                <div class="feature-pills">
+                    <div class="pill reveal reveal-delay-1"><span class="check"><i class="fa-regular fa-circle-check"></i></span>Consistent quality supply</div>
+                    <div class="pill reveal reveal-delay-2"><span class="check"><i class="fa-regular fa-circle-check"></i></span>Flexible orders</div>
+                    <div class="pill reveal reveal-delay-2"><span class="check"><i class="fa-regular fa-circle-check"></i></span>Customer centered service</div>
+                    <div class="pill reveal reveal-delay-3"><span class="check"><i class="fa-regular fa-circle-check"></i></span>Reliable &amp; timely delivery</div>
+                </div>
+            </diV>
+        </div>
+    </section>
+
+        <!--Stats Counter-->
+    <div class="wrap">
+        <div class="stat-strip">
+            <div class="stat-card reveal-delay-1">
+                <div #counter class="stat-number" data-target="9" data-suffix="+">0+</div>
+                <div class="stat-label">Institutions served</div>
+            </div>
+            
+            <div class="stat-card reveal-delay-2">
+                <div #counter class="stat-number" data-target="26" data-suffix="+">0+</div>
+                <div class="stat-label">Products supplied</div>
+            </div>
+
+            <div class="stat-card reveal-delay-3">
+                <div #counter class="stat-number" data-target="100" data-suffix="%">0%</div>
+                <div class="stat-label">Farm-sourced produce</div>
+                </div>
+        </div>
+    </div>
+
+
     <!--Clients-->
     <section id="clients" class="services-container"> 
-        <div class="client-head" reveal-delay-1>
+        <div class="client-head reveal reveal reveal-delay-1">
             <p class="eyebrow">Our clientele</p>
         </div>
 
-        <div class="client-intro" reveal-delay-2>
+        <div class="client-intro reveal reveal-delay-2">
                 <h2>Trusted by schools, hospitals and institutions</h2>
                 <p>We're proud to serve a diverse range of clients who trust us for fresh, reliable and high-quality supply of matooke, fresh foods, fruits and vegetables - including
                 Kampala Hospital, CoRSU Hospital, Kings College Budo, St. Marys College Kisubi, Watoto Child Care Ministries, Keba Express Hotel, Uganda Golf Club and many more.</p>
             </div>
-        <div class="client-logos" reveal-delay-3>
+        <div class="client-logos reveal reveal-delay-3">
             <div class="client-track">
                 <div class="logo-item"><img src="/assets/Images/budo.png" alt="KCB"></div>
                 <div class="logo-item"><img src="/assets/Images/corsu.jpeg" alt="CORSU"></div>
