@@ -2,8 +2,6 @@
 
   <!-- Top utility bar -->
   <div class="topbar">
-    <img class="logo" src="/assets/Images/TBS_logo.png" alt="TBS-Logo">
-
     <div class="search-section">
       <div class="search-container">
         <span class="search-icon">🔍</span>
@@ -38,7 +36,7 @@
 
   <!-- Inquiries Display-->
   <div class="inquiry-list" *ngIf="!loading && filteredInquiries.length">
-    <article class="inquiry-card" *ngFor="let inquiry of filteredInquiries">
+    <article class="inquiry-card" *ngFor="let inquiry of pagedInquiries">
 
       <div class="card-top">
         <div class="who-row">
@@ -75,6 +73,21 @@
 
     </article>
   </div>
+
+  <nav class="paginator" *ngIf="!loading && filteredInquiries.length && totalPages > 1">
+    <button type="button" class="page-btn" (click)="previousPage()" [disabled]="currentPage === 1" aria-label="Previous Page"> <i class="fa-solid fa-chevron-left"></i></button>
+
+    <button type="button" class="page-number" *ngFor="let page of pageNumbers" [class.active]="page === currentPage" (click)="goToPage(page)">
+      {{page}}
+    </button>
+
+    <button type="button" class="page-btn" (click)="nextPage()" [disabled]="currentPage === totalPages" aria-label="Next Page">
+       <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+
+
+  </nav>
 
   <p *ngIf="!loading && !filteredInquiries.length" class="status-msg">No inquiries yet.</p>
   <p *ngIf="!loading && !filteredInquiries.length && searchTerm" class="no-result">No results found for "{{searchTerm}}"</p>

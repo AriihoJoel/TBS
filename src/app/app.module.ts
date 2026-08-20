@@ -11,6 +11,7 @@ import { RequestQuoteComponent } from './pages/request-quote/request-quote.compo
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { provideRouter, Router, withInMemoryScrolling,Routes, RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -25,8 +26,7 @@ import { FooterComponent } from './shared/footer/footer.component';
     RequestQuoteComponent,
     HomePageComponent,
     NavbarComponent,
-    FooterComponent
-
+    FooterComponent,
   ],
   providers: [
     provideHttpClient(withInterceptorsFromDi()),

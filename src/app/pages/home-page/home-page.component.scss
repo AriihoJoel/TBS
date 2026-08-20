@@ -114,7 +114,7 @@ z-index: 2;
 }
 .eyebrow{
     margin: 0 0 10px;
-    color: var(--color-primary-dark);
+    color: var(--color-muted);
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -233,12 +233,14 @@ h1{
     line-height: 1.75;
     font-size: 15.5px;
     margin: 0 0 18px;
+    font-family: 'Inter',serif;
 }
 .about-points{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 14px;
     margin-top: 8px;
+    font-family: 'Inter',serif;
 }
 .about-chip{
     display: flex;
@@ -300,6 +302,7 @@ margin-bottom: 64px;
 }
 .section-head p{
     color: var(--color-muted);
+    font-family: 'Inter', serif;
     line-height: 1.65;
     font-size: 15.5px;
     margin: 0;
@@ -314,9 +317,16 @@ margin-bottom: 64px;
     background:  var(--color-primary);
     color: white;
 }
+.btn-primary:hover{
+    background: white;
+    color: var(--color-primary-dark);
+}
 .btn-secondary{
     background: white;
     color: var(--color-primary-dark);
+}
+.btn-secondary:hover{
+    background: var(--color-primary-light);
 }
 //services
 .services-container{
@@ -381,6 +391,7 @@ margin-bottom: 64px;
     line-height: 1.6;
     font-size: 14px;
     margin: 0;
+    font-family: 'Inter', serif;
 }
 //Processes
 .process-body{
@@ -510,6 +521,10 @@ margin-bottom: 64px;
     margin: 0px;
     letter-spacing: 0.5px;
 }
+.client-intro p{
+    color: var(--color-muted);
+    font-family: 'Inter', serif;
+}
 .client-logos{
     position: relative;
     overflow: hidden;
@@ -622,6 +637,7 @@ margin-bottom: 64px;
     font-size: 13.5px;
     line-height: 1.55;
     color: #cfe0d2;
+    font-family: 'Inter', serif;
 }
 .why-text h3{
     font-family: 'Fraunces', serif;
@@ -634,6 +650,7 @@ margin-bottom: 64px;
     line-height: 1.7;
     font-size: 15px;
     margin: 0 0 22px;
+    font-family: 'Inter', serif;
 }
 
 .feature-pills{
@@ -650,6 +667,7 @@ margin-bottom: 64px;
     align-items: center;
     gap: 10px;
     font-weight: 600;
+    font-family: 'Inter', serif;
     font-size: 14px;
     transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
 }

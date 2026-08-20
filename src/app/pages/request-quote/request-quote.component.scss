@@ -18,7 +18,13 @@
     align-items: center;
     padding: 32px;
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, var(--color-primary-light), var(--color-page));
+    background-color: var(--color-primary-light);
+    /*background-image: url(/assets/Images/wallpaper.png);
+    background-repeat: repeat;
+    background-size: 500px auto;
+    background-blend-mode: multiply;
+    opacity: 0.95;*/
+
 }
 
 .quote-intro{

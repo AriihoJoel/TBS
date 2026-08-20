@@ -16,6 +16,8 @@ export class AdminInquiriesComponent implements OnInit{
   loading = true;
   errorMessage = '';
   filteredInquiries : AdminResponse[] = [];
+  currentPage = 1;
+  pageSize = 5;
  
 
   constructor(
@@ -30,6 +32,7 @@ export class AdminInquiriesComponent implements OnInit{
         this.inquiries = inquiries;
         console.log(inquiries);
         this.filteredInquiries = inquiries;
+        this.currentPage = 1;
         this.loading = false;
       },
       error: () => {
@@ -39,7 +42,31 @@ export class AdminInquiriesComponent implements OnInit{
     });
   }
 
+  get totalPages(): number{
+    return Math.max(1,Math.ceil(this.filteredInquiries.length / this.pageSize))
+  }
 
+  get pageNumbers(): number[]{
+    return Array.from({length: this.totalPages}, (_, i) => i + 1); //generates an array for pagination controls
+  }
+
+  get pagedInquiries(): AdminResponse[]{
+    const start = (this.currentPage - 1) * this.pageSize;
+    return this.filteredInquiries.slice(start, start + this.pageSize);//returns only items for the current page
+  }
+
+  goToPage(page: number): void{
+    if(page < 1 || page > this.totalPages) return;
+    this.currentPage = page;
+  }
+
+  nextPage(): void{
+    this.goToPage(this.currentPage + 1);
+  }
+
+  previousPage(): void{
+    this.goToPage(this.currentPage - 1);
+  }
   //Search Filter
   onSearch(event:Event){
     const input = event.target as HTMLInputElement;
@@ -68,14 +95,14 @@ export class AdminInquiriesComponent implements OnInit{
         inquiries.status?.toLowerCase().includes(searchLower)
       );
     });
-
+    this.currentPage = 1;
   }
 
   //Clear search
   clearSearch(){
     this.searchTerm = '';
     this.filteredInquiries = this.inquiries;
-
+    this.currentPage = 1;
      //Clear Input field
     const input = document.querySelector('.search-input') as HTMLInputElement;
     if(input){

@@ -22,7 +22,8 @@ export class RequestQuoteComponent {
     'Bulk Institutional Supply',
     'Delivery Services',
     'Custom Food Orders',
-    'Quality Sourcing'
+    'Quality Sourcing',
+    'Other'
   ];
 
   constructor(

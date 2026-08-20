@@ -9,30 +9,35 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomePageComponent
+    component: HomePageComponent,
+    title: 'Tukahiirwa Bernard Services | Fresh Food & Grocery Supply'
   },
   {
     path: 'home',
-    component: HomePageComponent
+    component: HomePageComponent,
+    title: 'Tukahiirwa Bernard Services | Fresh Food & Grocery Supply'
   },
   {
     path: 'request-quote',
-    component: RequestQuoteComponent
+    component: RequestQuoteComponent,
+    title: 'Request Quote | Tukahiirwa Bernard Services'
   },
   {
     path: 'admin/login',
-    component: LoginPageComponent
+    component: LoginPageComponent,
+    title: 'Admin | Tukahiirwa Bernard Services '
   },
 
   {
     path: 'admin/inquiries',
     component: AdminInquiriesComponent,
-    canActivate: [authGuard]
+    canActivate: [authGuard],
+    title: 'Inquiries | Tukahiirwa Bernard Services'
 
   },
   {
     path: '**',
-    redirectTo: ''
+    redirectTo: 'home'
   }
 ];
 
