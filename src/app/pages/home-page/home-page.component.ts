@@ -139,15 +139,15 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
   }
   
   heroSlides = [
-    {
-      title: 'The freshest produce, handpicked for you',
-      text: 'We source directly from local farmers to bring you crisp vegetables, juicy fruits and quality ingredients delivered fresh to your doorstep.',
-      image: '/assets/Images/produce-crate.jpg'
-    },
+    //{
+     // title: 'The freshest produce, handpicked for you',
+     // text: 'We source directly from local farmers to bring you crisp vegetables, juicy fruits and quality ingredients delivered fresh to your doorstep.',
+      //image: '/assets/Images/produce-crate.jpg'
+   // },
     {
       title: 'Quality Matooke, delivered fresh',
       text: 'Sourced from the best farms in western Uganda. We deliver matooke at the perfect stage for every meal.',
-      image: '/assets/Images/bananas.jpg'
+      image: '/assets/Images/Matooke2.jpeg'
     },
     {
       title: 'Fresh chicken, offlayers or broilers',
@@ -156,14 +156,24 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
     },
     {
       title: 'Fresh beef, butchered to your preference',
-      text: 'Fresh local beef expertly butchered fresh daily from stew meat to prime cuts. We deliver the quality prime cuts your recipes  deserve',
-      image: '/assets/Images/beef.png'
+      text: 'We work with quality-assured butcheries to bring you fresh, hygienically handled beef cuts for every order.Fresh local beef expertly butchered prime cuts.',
+      image: '/assets/Images/Beef1.jpeg'
 
     },
     {
       title: 'All your kitchen essentials in one order',
       text: 'Cooking oil, rice, spices, flour and more. We stock all the groceries you need alongside fresh produce for complete meal solutions.',
       image: '/assets/Images/groceries.png'
+    },
+    {
+      title: 'Direct delivery, straight from the source',
+      text: 'Our team personally inspects and hand-delivers every order fresh and on time. We take care of the logistics, so you can focus on what matters most.',
+      image: '/assets/Images/Delivery1.jpeg'
+    },
+    {
+      title: 'Trusted by Watoto and other organizations',
+      text: 'We are proud to be the preferred supplier for organizations like Watoto and others providing quality food and produce.',
+      image: '/assets/Images/Delivery2.jpeg'
     }
   ]
 

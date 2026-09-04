@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, Validators,FormGroup ,ReactiveFormsModule } from '@angular/forms';
 import { InquiryService } from 'src/app/core/inquiry.service';
 import { CommonModule } from '@angular/common';
 
+declare var grecaptcha: any;
 @Component({
   selector: 'app-request-quote',
   imports: [ReactiveFormsModule, CommonModule],
@@ -11,6 +12,10 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./request-quote.component.scss']
 })
 export class RequestQuoteComponent {
+  @ViewChild('recaptcha') recaptchaEl! : ElementRef<HTMLDivElement>;
+  private recaptchaWidgetId : number | null = null;
+  captchaToken : string | null = null;
+
 
   loading = false;
   errorMessage = '';
@@ -40,9 +45,34 @@ export class RequestQuoteComponent {
     message: ['', Validators.required]
   });
 
+  ngAfterViewInit(): void{
+    this.renderRecaptcha();
+  }
+
+  private renderRecaptcha():void{
+    if (typeof grecaptcha === 'undefined' || !grecaptcha.render){
+      setTimeout(() => this.renderRecaptcha(), 200);
+      return;
+    }
+    this.recaptchaWidgetId = grecaptcha.render(this.recaptchaEl.nativeElement,{
+      'sitekey': '6LfNPaUtAAAAAKgnE8ZWDal12hTv-oFGxuzHnC35',
+      callback: (token:string) => {this. captchaToken = token;},
+      'expired-callback': () => {this.captchaToken = null;}
+    });
+  }
+  private resetCaptcha() : void{
+      this.captchaToken = null;
+      if(this.recaptchaWidgetId !== null && typeof grecaptcha !== 'undefined'){
+        grecaptcha.reset(this.recaptchaWidgetId);
+      }
+  }
   submit(){
     if(this.quoteForm.invalid){
       this.quoteForm.markAsTouched();
+      return;
+    }
+    if(!this.captchaToken){
+      this.errorMessage = 'Please complete the reCAPTCHA before submitting the form.';
       return;
     }
 
@@ -50,7 +80,10 @@ export class RequestQuoteComponent {
     this.errorMessage = '';
     this.successMessage = '';
 
-    this.inquiryService.createInquiry(this.quoteForm.getRawValue()).subscribe({
+    this.inquiryService.createInquiry({
+      ...this.quoteForm.getRawValue(),
+      captchaToken: this.captchaToken
+    }).subscribe({
       next: () => {
         this.successMessage = 'Your request has been sent successfully. We will contact you soon.';
         this.loading = false;

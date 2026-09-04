@@ -20,6 +20,7 @@ export interface CreateInquiry{
   emailAddress: string;
   requestedService: string;
   message: string;
+  captchaToken: string;
 }
 
 @Injectable({

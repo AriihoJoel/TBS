@@ -84,3 +84,44 @@
     color: #fff !important;
     border-color: var(--color-primary);
 }
+.nav-toggle{
+    display:none;
+    background: none;
+    font-size: 22px;
+    color: var(--color-forest);
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+@media (max-width: 900px){
+    .nav-toggle{
+        display: block;
+    }
+    .nav-links{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        background: var(--color-surface);
+        box-shadow: 0 12px 24px rgba(22,52,42,0.15);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    .nav-links.open{
+        max-height: 420px;
+    }
+    .nav-links a{
+        width: 100%;
+        padding: 14px 24px;
+        border-bottom: 1px solid var(--line-strong);
+    }
+    .admin-link{
+        margin: 10px 24px;
+        width: calc(100% - 48px);
+        justify-content: center;
+    }
+}

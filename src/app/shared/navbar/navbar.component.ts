@@ -12,11 +12,20 @@ import { AppRoutingModule } from "src/app/app-routing.module";
 })
 export class NavbarComponent {
   isNavScrolled = false;
+  isMobileMenuOpen = false;
 
   constructor(public authService: AuthService){}
     @HostListener('window:scroll')
   onWindowScroll():void{
     this.isNavScrolled = window.scrollY > 20
+  }
+
+  toggleMobileMenu():void{
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  closeMobileMenu():void{
+    this.isMobileMenuOpen = false;
   }
 
 }
