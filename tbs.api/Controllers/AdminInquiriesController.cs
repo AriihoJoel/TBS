@@ -16,7 +16,7 @@ namespace tbs.api.Controllers
             _context = context;
         }
         [HttpGet]
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<IEnumerable<AdminInquiryResponse>>> GetInquiries()
         {
             var inquiries = await _context.Inquiries
@@ -39,7 +39,7 @@ namespace tbs.api.Controllers
         }
 
         [HttpGet("{id:int}")]
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<AdminInquiryResponse>> GetInquiryById(int id)
         {
             var inquiry = await _context.Inquiries.AsNoTracking()

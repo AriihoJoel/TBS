@@ -23,7 +23,8 @@ namespace tbs.api.DTO
         [Required]
         [MaxLength(1000)]
         public string Message { get; set; } = string.Empty;
-
+        [Required]
+        public string CaptchaToken { get; set; } = string.Empty;
 
     }
 }
